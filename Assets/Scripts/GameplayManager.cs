@@ -88,13 +88,7 @@ public class GameplayManager : MonoBehaviour
         }
 
         // update time
-        remainingTimeInSec -= Time.deltaTime;
-
-        // update global light (game is dark at start, bright at end, moving shadows are indicating time till end)
-        float xAngle = remainingTimeInSec.Remap(0, totalTimeInSec, 120, 180);
-        float yAngle = 45;
-        float zAngle = 0;
-        //directLight.transform.localRotation = Quaternion.Euler(xAngle, yAngle, zAngle);
+        remainingTimeInSec -= Time.deltaTime;        
 
         // update points, time and lives in GUI
         scoreTxt.text = "Points: " + player.totalPoints;
