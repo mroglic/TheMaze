@@ -13,7 +13,7 @@ public class GameplayManager : MonoBehaviour
     [Header("Points")]
     public int maxAllowedNegativePoints = 10;
     public int pointsIncrement = 1;
-    public int pointsDecrement = 1;    
+    public int pointsDecrement = 1;
 
     [Header("GUI")]
     public GameObject scorePanel;
@@ -22,12 +22,13 @@ public class GameplayManager : MonoBehaviour
     public TextMeshProUGUI livesTxt;
     public GameObject endGamePanel;
     public TextMeshProUGUI endGameScoreTxt;
-    public TextMeshProUGUI endGameMessageTxt;    
+    public TextMeshProUGUI endGameMessageTxt;
 
     [Header("Camera")]    
     public CameraViewType cameraViewType;
     public enum CameraViewType { Top, Player }    
     public GameObject playerCamera;
+    public Camera mainCamera;
 
     [Header("Light")]
     public Light directLight;
@@ -38,10 +39,16 @@ public class GameplayManager : MonoBehaviour
     [Header("City Builder")]
     public CityBuilder cityBuilder;
 
+    [Header("Fog")]
+    public bool fogOn;
+    private VolumetricFog volumetricFog;
+
     void Start()
     {
         cameraViewType = CameraViewType.Top;
         player.transform.localScale = Vector3.one * 0.25f * cityBuilder.globalScale;
+
+        volumetricFog = mainCamera.GetComponent<VolumetricFog>();
 
         restartGame();
     }
@@ -50,23 +57,37 @@ public class GameplayManager : MonoBehaviour
     {
         if (isGameFinished) return;
 
+        // toggle fog on/off (Player View only)
+        if (Input.GetKeyUp(KeyCode.F) && cameraViewType == CameraViewType.Player)
+        {              
+            fogOn = !fogOn;
+            volumetricFog.enabled = fogOn;
+        }
+
+        // toggle camera view (Top view or Player view)
         if (Input.GetKeyUp(KeyCode.C))
-        {
-            // toggle camera view
+        {   
             if (cameraViewType == CameraViewType.Top)
             {
                 cameraViewType = CameraViewType.Player;
                 player.transform.localScale = Vector3.one * 0.01f * cityBuilder.globalScale;
+
+                // turn on volumetric lights in Player view
+                volumetricFog.enabled = true;
             }
-            else
+            else if (cameraViewType == CameraViewType.Player)
             {
                 cameraViewType = CameraViewType.Top;
                 player.transform.localScale = Vector3.one * 0.25f * cityBuilder.globalScale;
+
+                // turn off volumetric lights in Top view
+                volumetricFog.enabled = false;
             }
 
             playerCamera.gameObject.SetActive(!playerCamera.gameObject.activeSelf);            
         }
 
+        // update time
         remainingTimeInSec -= Time.deltaTime;
 
         // update global light (game is dark at start, bright at end, moving shadows are indicating time till end)
@@ -75,7 +96,7 @@ public class GameplayManager : MonoBehaviour
         float zAngle = 0;
         //directLight.transform.localRotation = Quaternion.Euler(xAngle, yAngle, zAngle);
 
-        // update points, time and lives
+        // update points, time and lives in GUI
         scoreTxt.text = "Points: " + player.totalPoints;
         timeTxt.text = "Time: " + (int)remainingTimeInSec;
         livesTxt.text = "Lives: " + (maxAllowedNegativePoints - player.negativePoints);

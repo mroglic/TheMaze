@@ -5,18 +5,23 @@ using UnityEngine;
 
 public class CityBuilder : MonoBehaviour
 {
+    [Header("Prefabs")]
     public GameObject buildingBlockPrefab;
     public Obstacle obstaclePrefab;
 
+    [Header("Maps (text matrix)")]
     public TextAsset cityMap;
     public TextAsset obstaclesMap;
 
+    [Header("Obstacles and Free Positions")]
     public List<Obstacle> obstacles;
     public List<Vector3> freePositions;
 
+    [Header("Max Points")]
     public int maxPoints;
 
-    public float globalScale = 100f;    
+    [Header("Global City Scale")]
+    public float globalScale = 50f;
 
     void Awake()
     {

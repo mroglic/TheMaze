@@ -8,14 +8,13 @@ public class Obstacle : MonoBehaviour
     public int totalPoints;
     public int currPoints;
 
-    public new Light light;
+    public AreaLight areaLight;
 
     public GameObject cube;
 
     void Start()
-    {   
-        light.range =  transform.localScale.x;
-        light.transform.localPosition = Vector2.up * 1.5f;
+    {
+        areaLight.GetComponent<MeshRenderer>().enabled = false;
     } 
    
     public void playHitAnimation()

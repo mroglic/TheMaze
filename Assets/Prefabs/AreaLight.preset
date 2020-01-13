@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AreaLight
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 792909cacf2415c48a1d7eebef426b5d,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Cube
+    value: 
+    objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ProxyShader
+    value: 
+    objectReference: {fileID: 4800000, guid: 2b28be3523d190a41910088d1ee68ef7, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_ShadowmapShader
+    value: 
+    objectReference: {fileID: 4800000, guid: 2c4cd42b134f7864fa579350e9cf6896, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_BlurShadowmapShader
+    value: 
+    objectReference: {fileID: 4800000, guid: 701192b62a7678549918bc87434699fe, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_RenderSource
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Size.x
+    value: 9.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Size.y
+    value: 7.14
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Size.z
+    value: 4.16
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Angle
+    value: 49
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Intensity
+    value: 0.87
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Color.r
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Color.g
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Color.b
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Color.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Shadows
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ShadowCullingMask.m_Bits
+    value: 4294967295
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ShadowmapRes
+    value: 1024
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ReceiverSearchDistance
+    value: 24
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ReceiverDistanceScale
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_LightNearSize
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_LightFarSize
+    value: 22
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ShadowBias
+    value: 0.0396
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_Quad
+    value: 
+    objectReference: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
