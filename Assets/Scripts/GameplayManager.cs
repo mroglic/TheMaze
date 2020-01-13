@@ -94,8 +94,7 @@ public class GameplayManager : MonoBehaviour
         scoreTxt.text = "Points: " + player.totalPoints;
         timeTxt.text = "Time: " + (int)remainingTimeInSec;
         livesTxt.text = "Lives: " + (maxAllowedNegativePoints - player.negativePoints);
-
-        //if (player.score < 0 || player.negativePoints > maxAllowedNegativePoints || remainingTimeInSec <= 0)
+                
         if (player.negativePoints > maxAllowedNegativePoints || remainingTimeInSec <= 0)
         {
             // end game - LOSE             

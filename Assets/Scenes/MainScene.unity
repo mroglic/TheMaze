@@ -2105,7 +2105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGameFinished: 0
-  totalTimeInSec: 300
+  totalTimeInSec: 120
   remainingTimeInSec: 0
   maxAllowedNegativePoints: 10
   pointsIncrement: 1
